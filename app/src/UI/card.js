@@ -1,12 +1,11 @@
 import React from "react"
-import { inputvalue } from "../components/inputfield";
 
-export default function Card() {
+export default function Card(props) {
    
     return(
         <div className="card_body">
-            <h1>Card</h1>
-            <h2>{inputvalue}</h2>
+            <h2 className="card">{props.value}</h2>
+            
         </div>
     );
 };
