@@ -1,3 +1,10 @@
-.character{
-    
+.character_container{
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #6dd6d1;
+
 }
+
