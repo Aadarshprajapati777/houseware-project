@@ -8,12 +8,10 @@ import { inputvalue } from "../components/inputfield";
 export default function Screen2() {
     const characters = inputvalue.split(""); 
     
-
-    
     return (
         <div className="character_container">
-            {characters.map((character) => (
-                <Card key={character} value={character} className="character_card" />
+            {characters.map((character, index) => (
+                <Card key={index} value={character} className="character_card" index={index} />
             ))}
         </div>
     );

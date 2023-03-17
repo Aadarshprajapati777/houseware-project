@@ -18,9 +18,7 @@ export default function Inputfield() {
     if (input.length > 0) {
       console.log(input);
         navigate("/screen2");
-
         inputvalue = input;
-
     } else {
       alert("Input is empty");
     }
