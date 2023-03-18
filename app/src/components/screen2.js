@@ -10,6 +10,7 @@ export default function Screen2() {
     
     return (
         <div className="character_container">
+            <h1 className="character_title">Characters-Before Delete</h1>
             {characters.map((character, index) => (
                 <Card key={index} value={character} className="character_card" index={index} />
             ))}

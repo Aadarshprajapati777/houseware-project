@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import "./inputfield.css";
+
 
 export let inputvalue  = "";   
 
@@ -20,16 +22,16 @@ export default function Inputfield() {
         navigate("/screen2");
         inputvalue = input;
     } else {
-      alert("Input is empty");
+      alert("Input is empty, please enter a value");
     }
   };
 
   return (
-    <div>
-      <h1>Inputfield</h1>
+    <div className="inputfield_container">
+      <h1 className="inputfield">Inputfield</h1>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={input} onChange={handleChange} />
-        <button type="submit">Submit</button>
+        <input type="text" value={input} onChange={handleChange}  className="input_box"/>
+        <button type="submit"  className="submit_button">Submit</button>
       </form>
     </div>
   );
