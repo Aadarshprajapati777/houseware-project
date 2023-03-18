@@ -2,17 +2,27 @@ import React from "react";
 import { afterDeleteInputValue } from "../UI/card";
 import Card from "../UI/card";
 import "./afterdelete.css";
+import { inputvalue } from "./inputfield";
 
 export default function Afterdelete() {
     const characters = afterDeleteInputValue.split("");
     return (
         <div className="card">
-             <div className="character_container">
+            <div className="character_container">
             <h1 className="character_title">Characters-After Delete</h1>
             {characters.map((character, index) => (
                 <Card key={index} value={character} className="character_card" index={index} />
             ))}
+             <div className="original_characters">
+            <h2 className="original_string"> Original String was:- </h2>
+            <h2 className="original_string_value">  {inputvalue}</h2>
         </div>
+
+
         </div>
+ 
+
+        </div>
+        
       );
     }

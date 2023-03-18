@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 export let deletechar = "";
 export let afterDeleteInputValue = "";
 
+
+
 export default function Card(props) {
 
     const navigate=useNavigate();

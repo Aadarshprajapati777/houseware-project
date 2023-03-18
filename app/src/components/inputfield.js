@@ -17,14 +17,26 @@ export default function Inputfield() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (input.length > 0) {
-      console.log(input);
-        navigate("/screen2");
-        inputvalue = input;
+
+
+    inputvalue = input;
+    let flag =0;
+
+    for (let i = 0; i < inputvalue.length; i++) {
+      if (inputvalue[i] !== " " && inputvalue.length !== 0) {
+        flag = 1;
+      }
+    }
+
+    if (flag === 1) { 
+      navigate("/screen2");
     } else {
-      alert("Input is empty, please enter a value");
+      alert("Input is empty, please enter a non-empty value");
     }
   };
+
+
+
 
   return (
     <div className="inputfield_container">
