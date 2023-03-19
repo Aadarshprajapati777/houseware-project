@@ -5,19 +5,35 @@ import { useNavigate } from 'react-router-dom';
 
 export let deletechar = "";
 export let afterDeleteInputValue = "";
+export let newInputValue = "";
 
+let isFirstTime = true;
 
-
-export default function Card(props) {
+export default function Card(props) {  
 
     const navigate=useNavigate();
-
+    
 
     const handleClick = (index) => {
-      console.log("index: " + index);
+      console.log("card clicked " + index);
+
+
+
       if (index !== -1) {
-        const beforeindex = inputvalue.substring(0, index);
-        const afterindex = inputvalue.substring(index + 1);
+        
+        console.log("inside index condition");
+
+        console.log("inputvalue: " + inputvalue);
+        console.log("afterDeleteInputValue: " + afterDeleteInputValue);
+
+        if (isFirstTime) {
+          afterDeleteInputValue = inputvalue;
+          isFirstTime = false;
+        }
+        
+
+        const beforeindex = afterDeleteInputValue.substring(0, index);
+        const afterindex = afterDeleteInputValue.substring(index + 1);
 
         console.log("beforeindex: " + beforeindex);
         console.log("afterindex: " + afterindex);
@@ -43,17 +59,15 @@ export default function Card(props) {
         const newInputValue = newBeforeIndex + deletechar + newAfterIndex
 
 
-        // console.log("deletechar: " + deletechar);
-        // console.log("newBeforeIndex: " + newBeforeIndex);
-        // console.log("newAfterIndex: " + newAfterIndex);
-
-        // console.log("newInputValue: " + newInputValue);
+        console.log("deletechar: " + deletechar);
+        console.log("newBeforeIndex: " + newBeforeIndex);
+        console.log("newAfterIndex: " + newAfterIndex);
+        console.log("newInputValue: " + newInputValue);
         
         afterDeleteInputValue = newInputValue;
+      
       }
-
       navigate("/afterdelete");
-
     };
     return (
       <div className="card">

@@ -5,10 +5,14 @@ import "./inputfield.css";
 
 
 export let inputvalue  = "";   
+export let initialcount = 0;
+
 
 export default function Inputfield() {
   const [input, setInput] = useState("");
   const navigate=useNavigate();
+
+    
 
   const handleChange = (e) => {
     setInput(e.target.value);
@@ -17,7 +21,6 @@ export default function Inputfield() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
 
     inputvalue = input;
     let flag =0;
@@ -28,7 +31,10 @@ export default function Inputfield() {
       }
     }
 
-    if (flag === 1) { 
+    if (flag === 1) {
+    
+      // i want to set isfirsttime to true here and use in card
+      
       navigate("/screen2");
     } else {
       alert("Input is empty, please enter a non-empty value");
@@ -38,12 +44,13 @@ export default function Inputfield() {
 
 
 
+
   return (
     <div className="inputfield_container">
       <h1 className="inputfield">Inputfield</h1>
       <form onSubmit={handleSubmit}>
         <input type="text" value={input} onChange={handleChange}  className="input_box"/>
-        <button type="submit"  className="submit_button">Submit</button>
+        <button type="submit"  className="submit_button" >Submit</button>
       </form>
     </div>
   );
