@@ -46,3 +46,15 @@
     outline: none;
   }
 
+  .card_body:hover .delete-icon {
+    display: inline-block;
+  }
+  
+  .delete-icon {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #DA0463;
+  }
+  

@@ -3,16 +3,15 @@
     font-weight: 700;
     color: #fff;
     text-align: center;
-    margin-top: 40px;
+    margin-top:40px;
 }
 
 .original_characters {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-    align-items: flex-end; /* align items to the bottom */
+    font-size: 1rem;
+    font-weight: 300;
+    color: #fff;
+    text-align: left;
+    margin-top:400px;
     }
 
 .original_string {

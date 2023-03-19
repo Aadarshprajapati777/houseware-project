@@ -58,7 +58,9 @@ export default function Card(props) {
     return (
       <div className="card">
         <button className="card_body" onClick={() => handleClick(props.index)}>
+
           {props.value}
+          <i class="fa fa-trash delete-icon"></i>
         </button>
       </div>
     );
