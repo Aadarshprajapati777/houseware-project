@@ -1,4 +1,4 @@
-.card_body{
+.card_body_d{
     width: 150px;
     height: 50px;
     cursor: pointer;
@@ -11,7 +11,7 @@
     text-align: center;
 
     outline: none;
-    border: 10px solid #404B69;
+    border: 10px solid #f00000;
     line-height: 2;
     font-weight: 900;
     color: #DA0463;
@@ -25,6 +25,34 @@
     background-color: white;
 
 }
+.card_body_nd{
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  background: #6dd6d1;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 10px 25px #57aba7, 0px -10px 25px #a6fffa, inset 0px -5px 10px #57aba7, inset 0px 5px 10px #a6fffa;
+  font-size: 50px;
+  transition: 500ms;
+  text-align: center;
+
+  outline: none;
+  border: 10px solid #404B69;
+  line-height: 2;
+  font-weight: 900;
+  color: #DA0463;
+  text-shadow: 3px 0 hsl(0, 100%, 43%);
+  border-radius: 15px;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  margin: 10px;
+  background-color: white;
+
+}
+
 
 .card{
     color: #DBEDF3;
@@ -33,23 +61,31 @@
 
 }
 
-.card_body:hover {
+.card_body_d:hover {
     border: 2px solid #6dd6d1;
   animation: hueRotation 2s infinite linear;
+}
+.card_body_nd:hover {
+  border: 2px solid #6dd6d1;
+animation: hueRotation 2s infinite linear;
 }
 
 @keyframes hueRotation {
     to {filter: hue-rotate(360deg);}
   }
 
-.card_body:focus {
+.card_body_d:focus {
     outline: none;
   }
-
-  .card_body:hover .delete-icon {
+  .card_body_nd:focus {
+    outline: none;
+  }
+  .card_body_d:hover .delete-icon {
     display: inline-block;
   }
-  
+  .card_body_nd:hover .delete-icon {
+    display: inline-block;
+  }
   .delete-icon {
     display: none;
     position: absolute;

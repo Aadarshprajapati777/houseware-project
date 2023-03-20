@@ -7,9 +7,13 @@ export let deletechar = "";
 export let afterDeleteInputValue = "";
 export let newInputValue = "";
 
+
 let isFirstTime;
+
+
 export default function Card(props) {
   isFirstTime = props.check;
+
   // console.log("check: " + props.check);
   const navigate = useNavigate();
 
@@ -47,12 +51,24 @@ export default function Card(props) {
     }
     navigate("/afterdelete");
   };
-  return (
-    <div className="card">
-      <button className="card_body" onClick={() => handleClick(props.index)}>
-        {props.value}
-        <i class="fa fa-trash delete-icon"></i>
-      </button>
-    </div>
-  );
+
+  if(props.duplicate) {
+    return (
+      <div className="card">
+        <button className="card_body_d" onClick={() => handleClick(props.index)}>
+          {props.value}
+          <i class="fa fa-trash delete-icon"></i>
+        </button>
+      </div>
+    );
+  } else {
+    return (
+      <div className="card">
+        <button className="card_body_nd" onClick={() => handleClick(props.index)}>
+          {props.value}
+          <i class="fa fa-trash delete-icon"></i>
+        </button>
+      </div>
+    );
+  }
 }
