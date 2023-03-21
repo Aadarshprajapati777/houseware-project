@@ -14,8 +14,18 @@ export default function Screen2() {
     navigate("/");
   };
 
+  const randomColor = () => {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+
+    return `rgb(${r}, ${g}, ${b})`;
+  };
+
   let duplicate = [];
   let nonduplicate = [];
+  let duplicatecolor = [];
+  let nonduplicatecolor = [];
 
   for (let i = 0; i < characters.length; i++) {
     if (!nonduplicate.includes(characters[i])) {
@@ -32,6 +42,46 @@ export default function Screen2() {
 
   console.log("duplicate: " + duplicate);
   console.log("nonduplicate: " + nonduplicate);
+
+  for (let i = 0; i < duplicate.length; i++) {
+   let mycolor = randomColor();
+   console.log("mycolor for duplicate: " + mycolor);
+    if (
+      !duplicatecolor.includes(mycolor) &&
+      !nonduplicatecolor.includes(mycolor)
+    ) {
+      duplicatecolor.push(mycolor);
+    } else {
+      i--;
+    }
+  }
+
+  for (let i = 0; i < nonduplicate.length; i++) {
+    let mycolor = randomColor();
+
+    if (
+      !duplicatecolor.includes(mycolor) &&
+      !nonduplicatecolor.includes(mycolor)
+    ) {
+      nonduplicatecolor.push(mycolor);
+    } else {
+      i--;
+    }
+  }
+
+  
+
+  console.log("duplicatecolor: " + duplicatecolor);
+  console.log("nonduplicatecolor: " + nonduplicatecolor);
+  const handleduplicatecolor = (value) => {
+    let index = duplicate.indexOf(value);
+    return duplicatecolor[index];
+  };
+
+  const handlenonduplicatecolor = (value) => {
+    let index = nonduplicate.indexOf(value);
+    return nonduplicatecolor[index];
+  };
 
   return (
     <div className="character_container">
@@ -56,6 +106,7 @@ export default function Screen2() {
               index={index}
               check={check}
               duplicate={false}
+              color={handlenonduplicatecolor(character)}
             />
           );
         } else {
@@ -67,12 +118,11 @@ export default function Screen2() {
               index={index}
               check={check}
               duplicate={true}
+              color={handleduplicatecolor(character)}
             />
           );
         }
-      }
-      )}
-
+      })}
       <button className="back_button" onClick={handle_back_button}>
         Back
       </button>

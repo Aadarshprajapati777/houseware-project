@@ -11,8 +11,20 @@ export let newInputValue = "";
 let isFirstTime;
 
 
+
 export default function Card(props) {
   isFirstTime = props.check;
+
+  
+
+
+
+  // const randomColor = () => {
+  //   const r = Math.floor(Math.random() * 256);
+  //   const g = Math.floor(Math.random() * 256);
+  //   const b = Math.floor(Math.random() * 256);
+  //   return `rgb(${r}, ${g}, ${b})`;
+  // };
 
   // console.log("check: " + props.check);
   const navigate = useNavigate();
@@ -55,7 +67,7 @@ export default function Card(props) {
   if(props.duplicate) {
     return (
       <div className="card">
-        <button className="card_body_d" onClick={() => handleClick(props.index)}>
+        <button className="card_body_d" onClick={() => handleClick(props.index) }  style={{backgroundColor: props.color}}>
           {props.value}
           <i class="fa fa-trash delete-icon"></i>
         </button>
@@ -64,7 +76,7 @@ export default function Card(props) {
   } else {
     return (
       <div className="card">
-        <button className="card_body_nd" onClick={() => handleClick(props.index)}>
+        <button className="card_body_nd" onClick={() => handleClick(props.index)} style={{backgroundColor: props.color}}> 
           {props.value}
           <i class="fa fa-trash delete-icon"></i>
         </button>
