@@ -57,7 +57,7 @@ export default function Card(props) {
           newAfterIndex += afterindex[i];
         }
       }
-
+      
       const newInputValue = newBeforeIndex + deletechar + newAfterIndex;
       afterDeleteInputValue = newInputValue;
     }
@@ -83,4 +83,4 @@ export default function Card(props) {
       </div>
     );
   }
-}
+} 

@@ -40,12 +40,12 @@ export default function Screen2() {
     nonduplicate.splice(nonduplicate.indexOf(duplicate[i]), 1);
   }
 
-  console.log("duplicate: " + duplicate);
-  console.log("nonduplicate: " + nonduplicate);
+  // console.log("duplicate: " + duplicate);
+  // console.log("nonduplicate: " + nonduplicate);
 
   for (let i = 0; i < duplicate.length; i++) {
    let mycolor = randomColor();
-   console.log("mycolor for duplicate: " + mycolor);
+  //  console.log("mycolor for duplicate: " + mycolor);
     if (
       !duplicatecolor.includes(mycolor) &&
       !nonduplicatecolor.includes(mycolor)
