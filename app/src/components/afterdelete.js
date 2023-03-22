@@ -1,5 +1,5 @@
 import React from "react";
-import { afterDeleteInputValue} from "../UI/card";
+import { afterDeleteInputValue } from "../UI/card";
 import Card from "../UI/card";
 import "./afterdelete.css";
 import { inputvalue } from "./inputfield";
@@ -8,17 +8,12 @@ import { useNavigate } from "react-router-dom";
 let check = false;
 
 export default function Afterdelete() {
-
-    
   const characters = afterDeleteInputValue.split("");
   const navigate = useNavigate();
 
   const handle_back = () => {
     navigate("/");
   };
-
-  
-
 
   const randomColor = () => {
     const r = Math.floor(Math.random() * 256);
@@ -46,12 +41,9 @@ export default function Afterdelete() {
     nonduplicate.splice(nonduplicate.indexOf(duplicate[i]), 1);
   }
 
-  // console.log("duplicate: " + duplicate);
-  // console.log("nonduplicate: " + nonduplicate);
 
   for (let i = 0; i < duplicate.length; i++) {
     let mycolor = randomColor();
-    //  console.log("mycolor for duplicate: " + mycolor);
     if (
       !duplicatecolor.includes(mycolor) &&
       !nonduplicatecolor.includes(mycolor)
@@ -74,12 +66,6 @@ export default function Afterdelete() {
       i--;
     }
   }
-
-  // console.log("inputvalue: " + inputvalue);
-  // console.log("afterDeleteInputValue: " + afterDeleteInputValue);
-
-  // console.log("duplicatecolor: " + duplicatecolor);
-  // console.log("nonduplicatecolor: " + nonduplicatecolor);
   const handleduplicatecolor = (value) => {
     let index = duplicate.indexOf(value);
     return duplicatecolor[index];
@@ -90,6 +76,9 @@ export default function Afterdelete() {
     return nonduplicatecolor[index];
   };
 
+  console.log(duplicatecolor);
+  console.log(nonduplicatecolor);
+  
   return (
     <div className="card">
       <div className="character_container">
@@ -97,7 +86,6 @@ export default function Afterdelete() {
           Back
         </button>
         <h1 className="character_title">Characters-After Delete</h1>
-        
 
         {characters.map((character, index) => {
           if (nonduplicate.includes(character)) {
@@ -122,7 +110,6 @@ export default function Afterdelete() {
                 check={check}
                 duplicate={true}
                 color={handleduplicatecolor(character)}
-                
               />
             );
           }
@@ -135,5 +122,3 @@ export default function Afterdelete() {
     </div>
   );
 }
-
-

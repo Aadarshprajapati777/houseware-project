@@ -40,12 +40,9 @@ export default function Screen2() {
     nonduplicate.splice(nonduplicate.indexOf(duplicate[i]), 1);
   }
 
-  // console.log("duplicate: " + duplicate);
-  // console.log("nonduplicate: " + nonduplicate);
 
   for (let i = 0; i < duplicate.length; i++) {
    let mycolor = randomColor();
-  //  console.log("mycolor for duplicate: " + mycolor);
     if (
       !duplicatecolor.includes(mycolor) &&
       !nonduplicatecolor.includes(mycolor)
@@ -86,15 +83,6 @@ export default function Screen2() {
   return (
     <div className="character_container">
       <h1 className="character_title">Characters-Before Delete</h1>
-      {/* {characters.map((character, index) => (
-        <Card
-          key={index}
-          value={character}
-          className="character_card"
-          index={index}
-          check={check}
-        />
-      ))} */}
 
       {characters.map((character, index) => {
         if (nonduplicate.includes(character)) {

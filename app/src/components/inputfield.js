@@ -6,7 +6,6 @@ import "./inputfield.css";
 export let inputvalue = "";
 export let initialcount = 0;
 
-
 export default function Inputfield() {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
@@ -14,8 +13,6 @@ export default function Inputfield() {
   const handleChange = (e) => {
     setInput(e.target.value);
   };
-
-  
 
   const handleSubmit = (e) => {
     e.preventDefault();
