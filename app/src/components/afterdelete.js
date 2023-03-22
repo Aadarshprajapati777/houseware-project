@@ -1,14 +1,15 @@
 import React from "react";
-import { afterDeleteInputValue } from "../UI/card";
+import { afterDeleteInputValue} from "../UI/card";
 import Card from "../UI/card";
 import "./afterdelete.css";
 import { inputvalue } from "./inputfield";
 import { useNavigate } from "react-router-dom";
 
-
-
 let check = false;
+
 export default function Afterdelete() {
+
+    
   const characters = afterDeleteInputValue.split("");
   const navigate = useNavigate();
 
@@ -16,11 +17,13 @@ export default function Afterdelete() {
     navigate("/");
   };
 
+  
+
 
   const randomColor = () => {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
-    const b= Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
 
     return `rgb(${r}, ${g}, ${b})`;
   };
@@ -47,8 +50,8 @@ export default function Afterdelete() {
   // console.log("nonduplicate: " + nonduplicate);
 
   for (let i = 0; i < duplicate.length; i++) {
-   let mycolor = randomColor();
-  //  console.log("mycolor for duplicate: " + mycolor);
+    let mycolor = randomColor();
+    //  console.log("mycolor for duplicate: " + mycolor);
     if (
       !duplicatecolor.includes(mycolor) &&
       !nonduplicatecolor.includes(mycolor)
@@ -72,10 +75,11 @@ export default function Afterdelete() {
     }
   }
 
-  
+  // console.log("inputvalue: " + inputvalue);
+  // console.log("afterDeleteInputValue: " + afterDeleteInputValue);
 
-  console.log("duplicatecolor: " + duplicatecolor);
-  console.log("nonduplicatecolor: " + nonduplicatecolor);
+  // console.log("duplicatecolor: " + duplicatecolor);
+  // console.log("nonduplicatecolor: " + nonduplicatecolor);
   const handleduplicatecolor = (value) => {
     let index = duplicate.indexOf(value);
     return duplicatecolor[index];
@@ -86,8 +90,6 @@ export default function Afterdelete() {
     return nonduplicatecolor[index];
   };
 
-
-
   return (
     <div className="card">
       <div className="character_container">
@@ -95,33 +97,36 @@ export default function Afterdelete() {
           Back
         </button>
         <h1 className="character_title">Characters-After Delete</h1>
-         {characters.map((character, index) => {
-        if (nonduplicate.includes(character)) {
-          return (
-            <Card
-              key={index}
-              value={character}
-              className="character_card"
-              index={index}
-              check={check}
-              duplicate={false}
-              color={handlenonduplicatecolor(character)}
-            />
-          );
-        } else {
-          return (
-            <Card
-              key={index}
-              value={character}
-              className="character_card"
-              index={index}
-              check={check}
-              duplicate={true}
-              color={handleduplicatecolor(character)}
-            />
-          );
-        }
-      })}
+        
+
+        {characters.map((character, index) => {
+          if (nonduplicate.includes(character)) {
+            return (
+              <Card
+                key={index}
+                value={character}
+                className="character_card"
+                index={index}
+                check={check}
+                duplicate={false}
+                color={handlenonduplicatecolor(character)}
+              />
+            );
+          } else {
+            return (
+              <Card
+                key={index}
+                value={character}
+                className="character_card"
+                index={index}
+                check={check}
+                duplicate={true}
+                color={handleduplicatecolor(character)}
+                
+              />
+            );
+          }
+        })}
         <div className="original_characters">
           <h2 className="original_string"> Original String was:- </h2>
           <h2 className="original_string_value"> {inputvalue}</h2>
@@ -130,3 +135,5 @@ export default function Afterdelete() {
     </div>
   );
 }
+
+

@@ -15,9 +15,10 @@ export default function Inputfield() {
     setInput(e.target.value);
   };
 
+  
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
     inputvalue = input;
 
     let flag = 0;
