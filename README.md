@@ -15,7 +15,7 @@ git clone https://github.com/Aadarshprajapati777/houseware-project.git
 Navigate to the project directory
 
 ```bash
-cd duplicate-character-remover
+cd houseware-project
 
 ```
 Install dependencies using npm or yarn
