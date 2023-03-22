@@ -41,7 +41,6 @@ export default function Afterdelete() {
     nonduplicate.splice(nonduplicate.indexOf(duplicate[i]), 1);
   }
 
-
   for (let i = 0; i < duplicate.length; i++) {
     let mycolor = randomColor();
     if (
@@ -78,7 +77,7 @@ export default function Afterdelete() {
 
   console.log(duplicatecolor);
   console.log(nonduplicatecolor);
-  
+
   return (
     <div className="card">
       <div className="character_container">
